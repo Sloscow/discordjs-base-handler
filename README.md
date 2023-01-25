@@ -23,7 +23,7 @@ const { EmbedBuilder } = require('discord.js');
 module.exports = {
     ...new SlashCommandBuilder()
         .setName("YOUR_COMMAND_NAME")
-        .setDescription("DESCRIPTION"),
+        .setDescription("Type here your description"),
 
     run: async (client, interaction) => {
         try {
