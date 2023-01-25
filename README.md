@@ -31,7 +31,7 @@ module.exports = {
         } catch (e) {
             console.log(String(e.stack))
             return interaction.channel.send({embeds: [new EmbedBuilder()
-                .setColor(process.env.ERROR_COLOR)
+                .setColor(0xf13737)
                 .setFooter({ text: process.env.APP_NAME, iconURL: client.user.avatarURL(client.user) })
                 .setTimestamp()
                 .setTitle(`❌ ERROR | An error occurred`)
