@@ -17,14 +17,27 @@ DiscordJS-base-handler is a functional, beginner friendly Discord Modular Bot wr
 
 #### Example Slash Commands
 ```js
-const { Client, CommandInteraction } = require("discord.js");
+const { SlashCommandBuilder } = require("@discordjs/builders");
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
-    name: "slashcommand name",
-    description: "Type here your description",
-    type: 'CHAT_INPUT',
+    ...new SlashCommandBuilder()
+        .setName("YOUR_COMMAND_NAME")
+        .setDescription("DESCRIPTION"),
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction) => {
+        try {
+            return 'YOUR FUNCTION HERE';
+        } catch (e) {
+            console.log(String(e.stack))
+            return interaction.channel.send({embeds: [new EmbedBuilder()
+                .setColor(process.env.ERROR_COLOR)
+                .setFooter({ text: process.env.APP_NAME, iconURL: client.user.avatarURL(client.user) })
+                .setTimestamp()
+                .setTitle(`❌ ERROR | An error occurred`)
+                .setDescription(`\`\`\`${e.message ? String(e.message).substr(0, 2000) : String(e).substr(0, 2000)}\`\`\``)
+            ]});
+        }
     },
 };
 ```
@@ -32,6 +45,7 @@ module.exports = {
 # 📑 Features
 - [ ] Modular system
 - [ ] Slash Commands
+- [ ] Debug System
 - [ ] Database Support
 
 # 🙏 Thanks to:
