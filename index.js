@@ -1,4 +1,3 @@
-// BindYourServer
 // Version: 1.0
 // Author: Sloscow
 // Copyright: 2023 (c) Sloscow | All rights reserved.
