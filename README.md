@@ -43,10 +43,13 @@ module.exports = {
 ```
 
 # 📑 Features
-- [ ] Modular system
-- [ ] Slash Commands
-- [ ] Debug System
-- [ ] Database Support
+| Features        | Supported |
+| ------------- | -----:|
+| supports subfolders | ✅ |
+| Slash Command handler | ✅ |
+| Debug System | ✅ |
+| Database Support | ❌ |
+| Command handler | ❌ |
 
 # 🙏 Thanks to:
 ### 🧑🏻‍🤝‍🧑🏻 Contributors
